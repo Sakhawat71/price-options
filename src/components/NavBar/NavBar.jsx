@@ -1,6 +1,9 @@
+import { useState } from "react";
 import Link from "../Link/Link";
+import { RiMenu2Fill , RiMenuUnfoldFill} from 'react-icons/ri';
 
 const NavBar = () => {
+    const [open,setOpen] = useState(false);
 
     const routes = [
         { path: '/', name: 'Home', id: 1 },
@@ -11,7 +14,13 @@ const NavBar = () => {
     ];
 
     return (
-        <nav className="flex bg-gray-200 py-4">
+        <nav className="flex bg-gray-200 py-4 ">
+            <div onClick={()=> setOpen(!open)}>
+                {
+                    open === true ? <RiMenuUnfoldFill className="text-3xl md:hidden"></RiMenuUnfoldFill> : <RiMenu2Fill className="text-3xl md:hidden"></RiMenu2Fill>
+                }
+            </div>
+            
             <ul className="md:flex mx-auto">
                 {
                     routes.map(route => <Link
