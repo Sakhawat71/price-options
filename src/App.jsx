@@ -1,17 +1,17 @@
 import './App.css'
 import NavBar from './components/NavBar/NavBar';
-// import DaisyNav from './components/DaisyNav/DaisyNav';
-// import Stat from './components/Stat/Stat';
+import PriceOptions from './components/PriceOptions/PriceOptions';
+
 
 function App() {
 
-  return (
-    <>
-        {/* <DaisyNav></DaisyNav> */}
-        {/* <Stat></Stat> */}
-        <NavBar></NavBar>
-    </>
-  )
+    return (
+        <>
+            <NavBar></NavBar>
+            <PriceOptions></PriceOptions>
+
+        </>
+    )
 }
 
 export default App;
