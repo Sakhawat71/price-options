@@ -6,6 +6,7 @@ import { Watch } from "react-loader-spinner";
 const PhoneChart = () => {
 
     const [phones, setPhones] = useState([]);
+    const [loading, setLoading] = useState(true);
     useState(() => {
         axios.get('https://openapi.programming-hero.com/api/phones?search=iphone')
             .then(data => {
@@ -19,6 +20,7 @@ const PhoneChart = () => {
                     return obj;
                 })
                 setPhones(phoneNewObj);
+                setLoading(false)
             })
     }, [])
 
@@ -27,7 +29,7 @@ const PhoneChart = () => {
     return (
         <div className="mx-auto">
             <div className="flex justify-center ">
-                <Watch
+                {loading && <Watch
                     height="80"
                     width="80"
                     radius="48"
@@ -36,7 +38,7 @@ const PhoneChart = () => {
                     wrapperStyle={{}}
                     wrapperClassName=""
                     visible={true}
-                />
+                />}
             </div>
             <div>
                 <BarChart width={1250} height={250} data={phones}>
