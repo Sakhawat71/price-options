@@ -50,7 +50,7 @@ const ChartBar = () => {
 
     return (
         <div className="my-10">
-            <ResponsiveContainer width={"100%"} maxHeight={500} minHeight={300}>
+            <ResponsiveContainer width={"100%"} maxHeight={500} minHeight={250}>
 
                 <BarChart
                     data={data}
